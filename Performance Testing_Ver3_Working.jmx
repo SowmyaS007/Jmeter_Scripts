@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Performance Testing">
+      <stringProp name="TestPlan.comments">This test plan was created to test the performance of the application under test</stringProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;133&quot;, &quot;Chromium&quot;;v=&quot;133&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="api-key" elementType="Header">
+            <stringProp name="Header.name">api-key</stringProp>
+            <stringProp name="Header.value">GDmiIS6Z8I5jAuJFJthlSYjkctqhk</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+          <elementProp name="accept" elementType="Header">
+            <stringProp name="Header.name">accept</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">content-type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">idea-tribe-auth-test.azurewebsites.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">idea-tribe-main.azurewebsites.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <collectionProp name="DNSCacheManager.hosts"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -User Registration">
+          <stringProp name="filename">D:\Jmeter_Results\QA_Instance_Perftest_Jan2026\user_data.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config - For Validation Answers">
+          <stringProp name="filename">D:/Jmeter_Results/QA_Instance_Perftest_Jan2026/sample_answers.xlsx</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">D:\Jmeter_Results\QA_Instance_Perftest_Jan2026\Results\results_${__time(yyyyMMdd_HHmmss)}.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User Registration" enabled="false">
+          <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">api/users/register</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;,&quot;firstName&quot;:&quot;${firstName}&quot;,&quot;lastName&quot;:&quot;${lastName}&quot;,&quot;mobileNumber&quot;:&quot;${mobile_number}&quot;,&quot;isStudent&quot;:false}&#xd;
+&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User Login">
+          <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">api/users/login</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Getting the Access Token">
+            <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.data</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Current User">
+          <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">api/users/get-current-user</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${accessToken} </stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract UserId">
+            <stringProp name="JSONPostProcessor.referenceNames">userId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.data._id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="File Upload" enabled="false">
+          <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">build/upload</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="D:\Jmeter_Results\QA_Instance_Perftest_Jan2026\Resumes\Arvina Devi-1.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+                <stringProp name="File.path">D:\Jmeter_Results\QA_Instance_Perftest_Jan2026\Resumes\Arvina Devi-1.pdf</stringProp>
+                <stringProp name="File.paramname">pdf_file</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Transactionid" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">transactionId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.transaction_id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOT FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">api-key</stringProp>
+                <stringProp name="Header.value">GDmiIS6Z8I5jAuJFJthlSYjkctqhk</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">vars.put(&quot;status&quot;, &quot;Initialized&quot;)
+vars.put(&quot;statusStartTime&quot;, String.valueOf(System.currentTimeMillis()))
+
+import java.text.SimpleDateFormat
+
+long start = Long.parseLong(vars.get(&quot;statusStartTime&quot;))
+String formatted = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(new Date(start))
+
+log.info(&quot;Status initialized at: &quot; + formatted)
+
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Resume Upload Transaction" enabled="false">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+            <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;status&quot;) != &quot;Success&quot;)}</stringProp>
+          </WhileController>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">3000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Status Check Request" enabled="true">
+              <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/build/upload/${transactionId}</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">api-key</stringProp>
+                    <stringProp name="Header.value">GDmiIS6Z8I5jAuJFJthlSYjkctqhk</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">status</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.status</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">Initialized</stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">log.info(&quot;Raw Status Check Response: &quot; + prev.getResponseDataAsString())
+log.info(&quot;Response Code: &quot; + prev.getResponseCode())
+log.info(&quot;Updated status: &quot; + vars.get(&quot;status&quot;))
+
+import java.text.SimpleDateFormat
+
+if (&quot;Success&quot;.equals(vars.get(&quot;status&quot;))) {
+    long start = Long.parseLong(vars.get(&quot;statusStartTime&quot;))
+    long end = System.currentTimeMillis()
+    long durationSec = (end - start) / 1000
+    String formattedEnd = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(new Date(end))
+
+    String message = &quot;Status reached Success at: &quot; + formattedEnd +
+                     &quot;\nElapsed time: &quot; + durationSec + &quot; seconds&quot;
+
+    // Log to jmeter.log
+    log.info(message)
+
+    // Store in variable
+    vars.put(&quot;statusMessage&quot;, message)
+
+    // Show in View Results Tree response
+    prev.setResponseData(prev.getResponseDataAsString() + &quot;\n&quot; + message, &quot;UTF-8&quot;)
+}</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1023381931">&quot;status&quot;:&quot;Success&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Fetch Knowledge Graph">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">knowledge_graph/fetch</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="user_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${userId}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">user_id</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">api-key</stringProp>
+                  <stringProp name="Header.value">GDmiIS6Z8I5jAuJFJthlSYjkctqhk</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor- All Skill Extraction" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def response = prev.getResponseDataAsString()
+def json = new JsonSlurper().parseText(response)
+
+// Lists to collect values
+def disciplines = []
+def megaSkills = []
+def microSkills = []
+def taskNames = []
+def taskLevels = []
+
+// Traverse nested children
+json.children.each { top -&gt;
+    top.children.each { discipline -&gt;
+        def discType = discipline.type ?: discipline._type
+        if (discType?.toLowerCase()?.startsWith(&quot;discipline&quot;)) {
+            disciplines &lt;&lt; (discipline.name_id ?: &quot;UNKNOWN&quot;)
+        }
+
+        discipline.children.each { mega -&gt;
+            def megaType = mega.type ?: mega._type
+            if (megaType?.toLowerCase()?.startsWith(&quot;megaskill&quot;)) {
+                megaSkills &lt;&lt; (mega.name_id ?: &quot;UNKNOWN&quot;)
+
+                mega.children.each { micro -&gt;
+                    def microType = micro.type ?: micro._type
+                    if (microType?.toLowerCase()?.startsWith(&quot;microskill&quot;)) {
+                        microSkills &lt;&lt; (micro.name_id ?: &quot;UNKNOWN&quot;)
+
+                        micro.children.each { task -&gt;
+                            def taskType = task.type ?: task._type
+                            if (taskType?.toLowerCase()?.startsWith(&quot;task&quot;)) {
+                                taskNames &lt;&lt; (task.name_id ?: &quot;UNKNOWN&quot;)
+                                taskLevels &lt;&lt; (task.level ?: &quot;N/A&quot;)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Store comma-separated values in JMeter variables
+vars.put(&quot;discipline_ALL&quot;, disciplines.join(&quot;,&quot;))
+vars.put(&quot;megaSkill_ALL&quot;, megaSkills.join(&quot;,&quot;))
+vars.put(&quot;microSkill_ALL&quot;, microSkills.join(&quot;,&quot;))
+vars.put(&quot;taskName_ALL&quot;, taskNames.join(&quot;,&quot;))
+vars.put(&quot;taskLevel_ALL&quot;, taskLevels.join(&quot;,&quot;))
+
+// Explicit logging of final values
+log.info(&quot;=== Extraction Complete ===&quot;)
+log.info(&quot;discipline_ALL=&quot; + vars.get(&quot;discipline_ALL&quot;))
+log.info(&quot;megaSkill_ALL=&quot; + vars.get(&quot;megaSkill_ALL&quot;))
+log.info(&quot;microSkill_ALL=&quot; + vars.get(&quot;microSkill_ALL&quot;))
+log.info(&quot;taskName_ALL=&quot; + vars.get(&quot;taskName_ALL&quot;))
+log.info(&quot;taskLevel_ALL=&quot; + vars.get(&quot;taskLevel_ALL&quot;))
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor - update csv with skill list" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def response = prev.getResponseDataAsString()
+def json = new JsonSlurper().parseText(response)
+
+// StringBuilder for CSV rows
+def csvRows = new StringBuilder()
+csvRows.append(&quot;Discipline,Megaskill,Microskill,Task,Level\n&quot;)
+
+// Traverse nested children
+json.children.each { top -&gt;
+    top.children.each { discipline -&gt;
+        def discName = discipline.name_id ?: &quot;UNKNOWN&quot;
+        discipline.children.each { mega -&gt;
+            def megaName = mega.name_id ?: &quot;UNKNOWN&quot;
+            mega.children.each { micro -&gt;
+                def microName = micro.name_id ?: &quot;UNKNOWN&quot;
+                micro.children.each { task -&gt;
+                    def taskName = task.name_id ?: &quot;UNKNOWN&quot;
+                    def taskLevel = task.level ?: &quot;N/A&quot;
+                    // Build one CSV line
+                    csvRows.append(&quot;${discName},${megaName},${microName},${taskName},${taskLevel}\n&quot;)
+                }
+            }
+        }
+    }
+}
+
+// Save into a JMeter variable
+vars.put(&quot;csvOutput&quot;, csvRows.toString())
+
+// Log preview
+log.info(&quot;=== CSV Output Preview ===\n&quot; + csvRows.toString())
+// Path to your CSV file (adjust as needed)
+def file = new File(&quot;D:/Jmeter_Results/QA_Instance_Perftest_Jan2026/skillgraph.csv&quot;)
+
+
+// Append mode: true
+file &lt;&lt; vars.get(&quot;csvOutput&quot;) + &quot;\n&quot;
+
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor Random skill selector -working for one megaskill and micro" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+import java.util.Random
+
+def response = prev.getResponseDataAsString()
+def json = new JsonSlurper().parseText(response)
+def rand = new Random()
+
+// Helper to find first node of a given type recursively
+def findFirstNode(nodes, match) {
+    for (n in nodes) {
+        def t = n.type ?: n._type
+        if (t?.toLowerCase()?.contains(match)) {
+            return n
+        }
+        if (n.children) {
+            def child = findFirstNode(n.children, match)
+            if (child) return child
+        }
+    }
+    return null
+}
+
+// Discipline
+def selectedDiscipline = findFirstNode(json.children, &quot;discipline&quot;)
+vars.put(&quot;discipline_ONE&quot;, selectedDiscipline?.name_id ?: &quot;UNKNOWN&quot;)
+
+// Megaskill
+def selectedMega = selectedDiscipline?.children?.find { 
+    def t = it.type ?: it._type
+    t?.toLowerCase()?.contains(&quot;megaskill&quot;)
+}
+vars.put(&quot;megaSkill_ONE&quot;, selectedMega?.name_id ?: &quot;UNKNOWN&quot;)
+
+// Microskill
+def selectedMicro = selectedMega?.children?.find { 
+    def t = it.type ?: it._type
+    t?.toLowerCase()?.contains(&quot;microskill&quot;)
+}
+vars.put(&quot;microSkill_ONE&quot;, selectedMicro?.name_id ?: &quot;UNKNOWN&quot;)
+
+// Task
+def selectedTask = selectedMicro?.children?.find { 
+    def t = it.type ?: it._type
+    t?.toLowerCase()?.contains(&quot;task&quot;)
+}
+vars.put(&quot;taskName_ONE&quot;, selectedTask?.name_id ?: &quot;UNKNOWN&quot;)
+vars.put(&quot;taskLevel_ONE&quot;, selectedTask?.level?.toString() ?: &quot;N/A&quot;)
+
+// Debug
+log.info(&quot;=== Single Chain Selection ===&quot;)
+log.info(&quot;Discipline = &quot; + vars.get(&quot;discipline_ONE&quot;))
+log.info(&quot;MegaSkill = &quot; + vars.get(&quot;megaSkill_ONE&quot;))
+log.info(&quot;MicroSkill = &quot; + vars.get(&quot;microSkill_ONE&quot;))
+log.info(&quot;Task = &quot; + vars.get(&quot;taskName_ONE&quot;))
+log.info(&quot;Task Level = &quot; + vars.get(&quot;taskLevel_ONE&quot;))</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor - To extract all microskills under one megaskill" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.util.Random
+import groovy.json.JsonOutput
+
+// Get the flattened CSV output from JMeter variable
+def csvLines = vars.get(&quot;csvOutput&quot;)?.split(&quot;\n&quot;) ?: []
+def rand = new Random()
+
+// Skip header row and keep only data rows
+def dataRows = csvLines.findAll { !it.startsWith(&quot;Discipline&quot;) &amp;&amp; it.contains(&quot;,&quot;) }
+
+// Build megaskill list from data rows
+def megaSkillList = dataRows.collect { it.split(&quot;,&quot;, -1)[1].trim() }.unique()
+def selectedMega = megaSkillList ? megaSkillList[rand.nextInt(megaSkillList.size())] : &quot;UNKNOWN&quot;
+vars.put(&quot;megaSkill_ONE&quot;, selectedMega)
+
+// Filter rows belonging to that megaskill
+def filteredRows = dataRows.findAll { it.contains(selectedMega) }
+
+def microSkills = []
+def taskNames = []
+def taskLevels = []
+
+filteredRows.each { row -&gt;
+    def parts = row.split(&quot;,&quot;, -1)
+    if (parts.size() &gt;= 5) {
+        vars.put(&quot;discipline_ONE&quot;, parts[0].trim())
+        microSkills &lt;&lt; parts[2].trim()
+        taskNames &lt;&lt; parts[3].trim()
+        taskLevels &lt;&lt; parts[4].trim()
+    }
+}
+
+// Store lists
+vars.put(&quot;microSkill_ALL&quot;, microSkills.join(&quot;,&quot;))
+vars.put(&quot;taskName_ALL&quot;, taskNames.join(&quot;,&quot;))
+vars.put(&quot;taskLevel_ALL&quot;, taskLevels.join(&quot;,&quot;))
+
+// Pick one microskill/task/level (first or random)
+def idx = microSkills ? rand.nextInt(microSkills.size()) : -1
+vars.put(&quot;microSkill_ONE&quot;, idx &gt;= 0 ? microSkills[idx] : &quot;UNKNOWN&quot;)
+vars.put(&quot;taskName_ONE&quot;, idx &gt;= 0 ? taskNames[idx] : &quot;UNKNOWN&quot;)
+vars.put(&quot;taskLevel_ONE&quot;, idx &gt;= 0 ? taskLevels[idx] : &quot;N/A&quot;)
+
+// Build nested JSON for skillsToValidate
+if (idx &gt;= 0) {
+    def skillsToValidate = [
+        [
+            &quot;Discipline&quot;: [
+                [
+                    &quot;id&quot;: vars.get(&quot;discipline_ONE&quot;),
+                    &quot;Megaskills&quot;: [
+                        [
+                            &quot;Megaskill&quot;: vars.get(&quot;megaSkill_ONE&quot;),
+                            &quot;Microskills&quot;: [
+                                [
+                                    &quot;Microskill&quot;: vars.get(&quot;microSkill_ONE&quot;),
+                                    &quot;Task&quot;: vars.get(&quot;taskName_ONE&quot;),
+                                    &quot;Level&quot;: vars.get(&quot;taskLevel_ONE&quot;)
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    vars.put(&quot;skillsToValidateJSON&quot;, JsonOutput.toJson(skillsToValidate))
+} else {
+    vars.put(&quot;skillsToValidateJSON&quot;, &quot;[]&quot;)
+}
+
+// Debug logging
+log.info(&quot;=== Megaskill Filtered Selection ===&quot;)
+log.info(&quot;Discipline = &quot; + vars.get(&quot;discipline_ONE&quot;))
+log.info(&quot;MegaSkill = &quot; + vars.get(&quot;megaSkill_ONE&quot;))
+log.info(&quot;MicroSkill_ONE = &quot; + vars.get(&quot;microSkill_ONE&quot;))
+log.info(&quot;TaskName_ONE = &quot; + vars.get(&quot;taskName_ONE&quot;))
+log.info(&quot;TaskLevel_ONE = &quot; + vars.get(&quot;taskLevel_ONE&quot;))
+log.info(&quot;skillsToValidateJSON = &quot; + vars.get(&quot;skillsToValidateJSON&quot;))</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor - To nested JSON Structure">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">// ... your existing extraction code ...
+
+import groovy.json.JsonOutput
+
+def discipline = vars.get(&quot;discipline_ONE&quot;)
+def megaSkill = vars.get(&quot;megaSkill_ONE&quot;)
+def microSkill = vars.get(&quot;microSkill_ONE&quot;)
+def taskName = vars.get(&quot;taskName_ONE&quot;)
+def taskLevel = vars.get(&quot;taskLevel_ONE&quot;)
+
+def skillsToValidate = [
+    [
+        &quot;Discipline&quot;: [
+            [
+                &quot;id&quot;: discipline,
+                &quot;Megaskills&quot;: [
+                    [
+                        &quot;Megaskill&quot;: megaSkill,
+                        &quot;Microskills&quot;: [
+                            [
+                                &quot;Microskill&quot;: microSkill,
+                                &quot;Task&quot;: taskName,
+                                &quot;Level&quot;: taskLevel
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+
+vars.put(&quot;skillsToValidateJSON&quot;, JsonOutput.toJson(skillsToValidate))
+log.info(&quot;Built skillsToValidate: &quot; + vars.get(&quot;skillsToValidateJSON&quot;))</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.OpenWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.OpenWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.OpenWebSocketSampler" testname="WebSocket Open Connection">
+          <boolProp name="TLS">true</boolProp>
+          <stringProp name="server">idea-tribe-algorizz.azurewebsites.net</stringProp>
+          <stringProp name="port">443</stringProp>
+          <stringProp name="path">/event-gateway-socket/?EIO=4&amp;transport=websocket</stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="readTimeout">6000</stringProp>
+        </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler - 40">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="payloadType">Text</stringProp>
+          <stringProp name="requestData">40</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="loadDataFromFile">false</boolProp>
+          <stringProp name="dataFile"></stringProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="dataType">Text</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <stringProp name="readTimeout">10000</stringProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler -Get 40">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="dataType">Text</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <stringProp name="readTimeout">6000</stringProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor -Extract socketId">
+          <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
+          <stringProp name="RegexExtractor.refname">socketId</stringProp>
+          <stringProp name="RegexExtractor.regex">.*&quot;sid&quot;:&quot;([^&quot;]+)&quot;</stringProp>
+          <stringProp name="RegexExtractor.template">$1$</stringProp>
+          <stringProp name="RegexExtractor.default"></stringProp>
+          <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+          <stringProp name="RegexExtractor.match_number">1</stringProp>
+        </RegexExtractor>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler -Auth">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="payloadType">Text</stringProp>
+          <stringProp name="requestData">420[&quot;authenticate&quot;, {
+  &quot;userId&quot;: &quot;${userId}&quot;,
+  &quot;conversationId&quot;: &quot;chat_dev_66b602af&quot;
+}]</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="loadDataFromFile">false</boolProp>
+          <stringProp name="dataFile"></stringProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler - Get 430 - Auth success">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="dataType">Text</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <stringProp name="readTimeout">20000</stringProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">log.info(&quot;skillsToValidateJSON resolved to: &quot; + vars.get(&quot;skillsToValidateJSON&quot;))
+log.info(&quot;Sending frame: 421[\&quot;start-conversation\&quot;, &quot; + vars.get(&quot;skillsToValidateJSON&quot;) + &quot;]&quot;)</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler -Start Conversation">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="payloadType">Text</stringProp>
+          <stringProp name="requestData">421[&quot;start-conversation&quot;, {
+  &quot;userId&quot;: &quot;${userId}&quot;,
+  &quot;conversationId&quot;: &quot;chat_dev_66b602af&quot;,
+  &quot;chatHistory&quot;: [],
+  &quot;validationText&quot;: &quot;First Question so ask - Are you ready&quot;,
+  &quot;assessed_skills&quot;: [],
+  &quot;weak_response_count&quot;: {},
+  &quot;skillsToValidate&quot;: ${skillsToValidateJSON}
+}] </stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="loadDataFromFile">false</boolProp>
+          <stringProp name="dataFile"></stringProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+          <stringProp name="ConstantTimer.delay">30000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler -Get 431">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <stringProp name="dataType">Text</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <stringProp name="readTimeout">40000</stringProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">vars.put(&quot;chatEnded&quot;, &quot;false&quot;)
+vars.put(&quot;ws_loop_count&quot;, &quot;0&quot;)
+vars.put(&quot;questionId&quot;, &quot;&quot;)
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+          <stringProp name="IfController.condition">${__groovy(
+  vars.get(&quot;ws_event&quot;) == &quot;ping&quot;
+)}</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+          <boolProp name="IfController.useExpression">true</boolProp>
+        </IfController>
+        <hashTree>
+          <eu.luminis.jmeter.wssampler.PingPongSampler guiclass="eu.luminis.jmeter.wssampler.PingPongSamplerGui" testclass="eu.luminis.jmeter.wssampler.PingPongSampler" testname="WebSocket Ping/Pong">
+            <stringProp name="type">Pong</stringProp>
+            <stringProp name="readTimeout">6000</stringProp>
+          </eu.luminis.jmeter.wssampler.PingPongSampler>
+          <hashTree/>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller -if ping answer pong" enabled="false">
+          <stringProp name="IfController.condition">${__groovy(
+  vars.get(&quot;ws_event&quot;) == &quot;ping&quot;
+)}</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+          <boolProp name="IfController.useExpression">true</boolProp>
+        </IfController>
+        <hashTree>
+          <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler for pong">
+            <boolProp name="TLS">false</boolProp>
+            <stringProp name="server"></stringProp>
+            <stringProp name="port">80</stringProp>
+            <stringProp name="path"></stringProp>
+            <stringProp name="connectTimeout">20000</stringProp>
+            <stringProp name="payloadType">Text</stringProp>
+            <stringProp name="requestData">3</stringProp>
+            <boolProp name="createNewConnection">false</boolProp>
+            <boolProp name="loadDataFromFile">false</boolProp>
+            <stringProp name="dataFile"></stringProp>
+          </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+            <stringProp name="ConstantTimer.delay">6000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">if (vars.get(&quot;ws_loop_count&quot;) == null) {
+    vars.put(&quot;ws_loop_count&quot;, &quot;0&quot;)
+}</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller">
+          <stringProp name="WhileController.condition">${__groovy(
+  !&quot;true&quot;.equals(vars.get(&quot;chatEnded&quot;)) &amp;&amp;
+  ((vars.get(&quot;ws_loop_count&quot;) ?: &quot;0&quot;) as int) &lt; 2
+)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ws_loop_count" enabled="false">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end"></stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name"></stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler">
+            <boolProp name="TLS">false</boolProp>
+            <stringProp name="server"></stringProp>
+            <stringProp name="port">80</stringProp>
+            <stringProp name="path"></stringProp>
+            <stringProp name="connectTimeout">20000</stringProp>
+            <stringProp name="dataType">Text</stringProp>
+            <boolProp name="createNewConnection">false</boolProp>
+            <stringProp name="readTimeout">60000</stringProp>
+            <boolProp name="optional">false</boolProp>
+          </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+          <hashTree>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def resp = prev.getResponseDataAsString()
+
+// --------------------------------------------------
+// 0. Handle ping/pong frames
+// --------------------------------------------------
+if (resp == &quot;2&quot;) {
+    vars.put(&quot;ws_event&quot;, &quot;ping&quot;)
+    return
+}
+if (resp == &quot;3&quot; || !resp || resp.trim().isEmpty()) {
+    return
+}
+
+// --------------------------------------------------
+// NEW: Handle intro answer ack (432)
+// --------------------------------------------------
+if (resp.startsWith(&quot;432&quot;)) {
+    vars.put(&quot;introAnswered&quot;,&quot;true&quot;)
+    log.info(&quot;Intro answer acknowledged → introAnswered set to true&quot;)
+    return
+}
+
+// --------------------------------------------------
+// 1. Save last real frame
+// --------------------------------------------------
+vars.put(&quot;WS_LAST_RESPONSE&quot;, resp)
+
+// --------------------------------------------------
+// 2. Initialize state vars (ONLY once)
+// --------------------------------------------------
+if (vars.get(&quot;introAnswered&quot;) == null) {
+    vars.put(&quot;introAnswered&quot;, &quot;false&quot;)
+}
+if (vars.get(&quot;chatEnded&quot;) == null) {
+    vars.put(&quot;chatEnded&quot;, &quot;false&quot;)
+}
+
+// --------------------------------------------------
+// 3. Parse Socket.IO event frames
+// --------------------------------------------------
+try {
+    if (!resp.startsWith(&quot;42[&quot;)) return
+
+    def body = resp.substring(2)
+    def parsed = new JsonSlurper().parseText(body)
+
+    def eventName = parsed[0]
+    def payload   = parsed.size() &gt; 1 ? parsed[1] : [:]
+
+    // --------------------------------------------------
+    // 4. Capture question info
+    // --------------------------------------------------
+    if (payload?.conversationId) vars.put(&quot;conversationId&quot;, payload.conversationId.toString())
+    if (payload?.questionText)   vars.put(&quot;questionText&quot;, payload.questionText.toString())
+    if (payload?.questionType)   vars.put(&quot;questionType&quot;, payload.questionType.toString())
+    if (payload?.skill)          vars.put(&quot;skill&quot;, payload.skill.toString())
+
+    // --------------------------------------------------
+    // 5. Determine Intro vs Skill
+    // --------------------------------------------------
+    if (eventName == &quot;question-generated&quot;) {
+        def skill = payload?.skill
+        if (vars.get(&quot;introAnswered&quot;) == &quot;false&quot; &amp;&amp; (skill == null || skill == &quot;null&quot;)) {
+            vars.put(&quot;ws_event&quot;, &quot;intro-question&quot;)
+        } else {
+            vars.put(&quot;ws_event&quot;, &quot;skill-question&quot;)
+        }
+    } else {
+        vars.put(&quot;ws_event&quot;, eventName)
+    }
+
+    // --------------------------------------------------
+    // 6. Detect chat end
+    // --------------------------------------------------
+    if (payload?.chatEnded == true || eventName in [&quot;conversation-ended&quot;, &quot;all-questions-answered&quot;]) {
+        vars.put(&quot;chatEnded&quot;, &quot;true&quot;)
+        log.info(&quot;Chat ended by server&quot;)
+    }
+
+    log.info(&quot;WS EVENT=&quot; + vars.get(&quot;ws_event&quot;) +
+             &quot; | introAnswered=&quot; + vars.get(&quot;introAnswered&quot;) +
+             &quot; | conversationId=&quot; + vars.get(&quot;conversationId&quot;) +
+             &quot; | questionText=&quot; + vars.get(&quot;questionText&quot;) +
+             &quot; | skill=&quot; + vars.get(&quot;skill&quot;))
+}
+catch (Exception e) {
+    log.warn(&quot;WS parse failed, ignoring frame: &quot; + resp)
+    log.info(&quot;WS EVENT=&quot; + eventName + &quot; | rawResp=&quot; + resp)
+}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+            <stringProp name="IfController.condition">${__groovy(
+  vars.get(&quot;ws_event&quot;) == &quot;intro-question&quot; &amp;&amp;
+  vars.get(&quot;introAnswered&quot;) == &quot;false&quot;
+)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">log.info(&quot;Sending frame: &quot; + sampler.getRequestData())</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler -Intro Question Answered">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">422[&quot;question-answered&quot;, {
+  &quot;userId&quot;:&quot;${userId}&quot;,
+  &quot;conversationId&quot;:&quot;${conversationId}&quot;,
+  &quot;questionText&quot;:&quot;${questionText}&quot;,
+  &quot;questionType&quot;:&quot;${questionType}&quot;,
+  &quot;skill&quot;:null,
+  &quot;answerText&quot;:&quot;Yes&quot;,
+  &quot;chatHistory&quot;:[{&quot;role&quot;:&quot;bot&quot;,&quot;message&quot;:&quot;${questionText}&quot;},{&quot;role&quot;:&quot;user&quot;,&quot;message&quot;:&quot;Yes&quot;}]
+}]
+
+
+</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">vars.put(&quot;introAnswered&quot;,&quot;true&quot;)
+log.info(&quot;Intro answer sent → introAnswered set to true&quot;)
+log.info(&quot;Ack received for frameNum=&quot; + vars.get(&quot;frameNum&quot;))
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+            <stringProp name="IfController.condition">${__groovy(vars.get(&quot;ws_event&quot;) == &quot;skill-question&quot; &amp;&amp; vars.get(&quot;introAnswered&quot;) == &quot;true&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">def count = (vars.get(&quot;ws_loop_count&quot;) ?: &quot;0&quot;) as int
+def frameNum = 422 + count  // so first skill answer = 423, then 424, etc.
+vars.put(&quot;frameNum&quot;, frameNum.toString())
+log.info(&quot;Sending frame &quot; + frameNum)</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler - Skill Question Answered">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">${frameNum}[&quot;question-answered&quot;, {
+  &quot;userId&quot;: &quot;${userId}&quot;,
+  &quot;conversationId&quot;: &quot;${conversationId}&quot;,
+  &quot;questionText&quot;: &quot;${questionText}&quot;,
+  &quot;questionType&quot;: &quot;${questionType}&quot;,
+  &quot;skill&quot;: &quot;${skill}&quot;,
+  &quot;answerText&quot;: &quot;${Answer}&quot;,
+  &quot;chatHistory&quot;: [
+    { &quot;role&quot;: &quot;bot&quot;, &quot;message&quot;: &quot;${questionText}&quot; },
+    { &quot;role&quot;: &quot;user&quot;, &quot;message&quot;: &quot;${Answer}&quot; }
+  ]
+}]
+</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler - Get NExt question" enabled="false">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">42[&quot;get-next-question&quot;, {
+  &quot;userId&quot;: &quot;${userId}&quot;,
+  &quot;conversationId&quot;: &quot;chat_dev_66b602af&quot;,
+  &quot;skillsToValidate&quot;: ${skillsToValidateJSON}
+  &quot;sender&quot;: {
+    &quot;userId&quot;: &quot;${userId}&quot;,
+    &quot;socketId&quot;: &quot;${socketId}&quot;
+  },
+  &quot;chatHistory&quot;: [
+    { &quot;role&quot;: &quot;bot&quot;, &quot;message&quot;: &quot;${questionText}&quot; },
+    { &quot;role&quot;: &quot;user&quot;, &quot;message&quot;: &quot;${Answer}&quot; }
+  ]
+&quot;gatewayReceivedAt&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;)}&quot;
+}]</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="false">
+            <stringProp name="IfController.condition">If (ws_event == &quot;response-validated&quot;)</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">42[&quot;get_next_question&quot;,{
+  &quot;originalEvent&quot;:&quot;get_next_question&quot;,
+  &quot;payload&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;conversationId&quot;:&quot;${conversationId}&quot;,
+    &quot;skillsToValidate&quot;: ${skillsToValidateJSON}
+  },
+  &quot;sender&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;socketId&quot;:&quot;${socketId}&quot;
+  },
+  &quot;gatewayReceivedAt&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;)}&quot;
+}]
+</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - Get Next question " enabled="false">
+            <stringProp name="IfController.condition">${__groovy(vars.get(&quot;ws_event&quot;) == &quot;response-validated&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+              <stringProp name="ConstantTimer.delay">6000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">log.info(&quot;Sending frame: &quot; + sampler.getRequestData())</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler - GEt NExt Question after response validated for first skill quest">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">42[&quot;get_next_question&quot;,{
+  &quot;originalEvent&quot;:&quot;get_next_question&quot;,
+  &quot;payload&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;conversationId&quot;:&quot;chat_dev_66b602af&quot;,
+    &quot;eventType&quot;:&quot;get_next_question&quot;,
+    &quot;skillsToValidate&quot;:${skillsToValidateJSON}
+  },
+  &quot;sender&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;socketId&quot;:&quot;${socketId}&quot;
+  },
+  &quot;gatewayReceivedAt&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;)}&quot;
+}]
+</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - Get Next question after normal question" enabled="false">
+            <stringProp name="IfController.condition">${__groovy(vars.get(&quot;ws_event&quot;) == &quot;response-validated&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">3000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Text</stringProp>
+              <stringProp name="requestData">42[&quot;get_next_question&quot;,{
+  &quot;originalEvent&quot;:&quot;get_next_question&quot;,
+  &quot;payload&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;conversationId&quot;:&quot;chat_dev_66b602af&quot;,
+     &quot;eventType&quot;:&quot;get_next_question&quot;,
+    &quot;skillsToValidate&quot;:${skillsToValidateJSON}
+  },
+  &quot;sender&quot;:{
+    &quot;userId&quot;:&quot;${userId}&quot;,
+    &quot;socketId&quot;:&quot;${socketId}&quot;
+  },
+  &quot;gatewayReceivedAt&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;)}&quot;
+}]
+</stringProp>
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - Exit">
+            <stringProp name="IfController.condition">${__groovy(vars.get(&quot;chatEnded&quot;) == &quot;true&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&quot;STOP_LOOP&quot;, &quot;true&quot;)
+
+def count = (vars.get(&quot;ws_loop_count&quot;) ?: &quot;0&quot;) as int
+vars.put(&quot;ws_loop_count&quot;, (count + 1).toString())
+log.info(&quot;Loop count incremented → &quot; + vars.get(&quot;ws_loop_count&quot;))</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
